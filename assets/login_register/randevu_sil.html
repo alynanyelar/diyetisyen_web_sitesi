@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Online Diyet Formu</title>
+    <link rel="stylesheet" href="css\dytform.css" />
+    <link rel="stylesheet" href="css\dashboard.css" />
+    <script>
+        window.onload = function () {
+            var select = document.getElementById("gln_email");
+
+            // AJAX ile email_cek.php dosyasını çağırma
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "randevu_blgcek.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var jsonVeri = JSON.parse(xhr.responseText);
+
+                    // Seçim menüsünü temizle
+                    select.innerHTML = "";
+
+                    // JSON verisini döngü ile seçme menüsüne ekleme
+                    for (var i = 0; i < jsonVeri.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = jsonVeri[i];
+                        select.appendChild(option);
+                    }
+                }
+            };
+            xhr.send();
+        };
+    </script>
+    
+</head>
+
+<body>
+    <h1>KULLANICIYA ATANAN RANDEVUYU SİL</h1>
+    <nav>
+    <ul>
+        <li onclick="window.location.href='dashboard.html';" style="cursor: pointer;" class="no-underline">Randevular sayfasına dön
+        </li>
+      </ul>
+    </nav><br>
+    <div class="form-wrapper">
+        <form action="randevu_sil.php" method="POST">
+
+            <label for="gln_email">Randevusu silinicek olan kullanıcıyı seç:</label>
+            <select id="gln_email" name="gln_email"></select>
+
+            <input type="submit" value="Formu Gönder" />
+        </form>
+    </div>
+</body>
+
+</html>

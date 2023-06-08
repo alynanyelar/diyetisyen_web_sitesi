@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>YÖNETİCİ GİRİŞİ</title>
+    <meta name="description" content="Login - Register Template" />
+    <meta name="author" content="Lorenzo Angelino aka MrLolok" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css\main.css" />
+  </head>
+
+  <body id="bodyback">
+    <div id="container-login">
+      <div id="title">
+        <i class="material-icons lock">lock</i> YÖNETİCİ GİRİŞİ
+      </div>
+
+      <form action="yntlogin.php" method="POST">
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">face</i>
+          </div>
+          <input
+            id="username"
+            name="username1"
+            placeholder="Username"
+            type="text"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">vpn_key</i>
+          </div>
+          <input
+            id="password"
+            name="password2"
+            placeholder="Password"
+            type="password"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <input type="submit" value="Giriş yap" />
+      </form>
+      <div class="register">
+        YÖNETİCİ GİRİŞİ <br />
+        <br />
+        bu giriş yönetici tarafından oluşturulan hesaplardır.
+      </div>
+    </div>
+  </body>
+</html>

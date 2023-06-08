@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Diyetisyene kullanıcı atama</title>
+    <style>
+        body {
+            background-color: #58e658;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        // Sayfanın yüklendikten sonra belirli bir süre sonra yönlendirme yapması için JavaScript kullanıyoruz
+        window.onload = function() {
+          setTimeout(function() {
+            window.location.href = "dashboard.html"; // Login sayfasına yönlendir
+          }, 2000); // 2 saniye (2000 milisaniye) sonra yönlendirme yap
+        };
+      </script>
+</head>
+<body>
+    <h1>Diyetisyene atanan randevu başarılı bir şekilde silindi.</h1>
+    <p>Diyetisyenlerimize en kısa sürede yeni randevu atanacaktır. İlgilendiğiniz için teşekkür ederiz!</p>
+</body>
+</html>

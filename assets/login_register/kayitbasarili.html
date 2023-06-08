@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kayıt Başarılı</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #37e640;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+  </style>
+  <script>
+    // Sayfanın yüklendikten sonra belirli bir süre sonra yönlendirme yapması için JavaScript kullanıyoruz
+    window.onload = function() {
+      setTimeout(function() {
+        window.location.href = "login.html"; // Login sayfasına yönlendir
+      }, 2000); // 2 saniye (2000 milisaniye) sonra yönlendirme yap
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Kayıt Başarılı</h2>
+    <p>Tebrikler! Başarıyla kayıt oldunuz.</p>
+    <p>Giriş sayfasına yönlendiriliyorsunuz...</p>
+  </div>
+</body>
+</html>

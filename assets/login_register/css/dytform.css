@@ -1,0 +1,75 @@
+body {
+  margin: 70px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-image: url("images/overlay.png"),
+    -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+  background-image: url("images/overlay.png"),
+    -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+  background-image: url("images/overlay.png"),
+    -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+  background-image: url("images/overlay.png"),
+    linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.form-standart {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.form-wrapper {
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white; /* Arka plan rengi beyaz */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}

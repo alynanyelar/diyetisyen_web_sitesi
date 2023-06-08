@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>RANDEVULAR</title>
+  <link rel="stylesheet" href="css\dashboard.css">
+  <script>
+    // Veriyi almak için AJAX kullanma
+    // Veriyi almak için AJAX kullanma
+    function getData() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "dyt_atn_rnd.php", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          displayData(data);
+        }
+      };
+      xhr.send();
+    }
+
+    // Veriyi HTML içerisinde görüntüleme
+    function displayData(data) {
+      var table = document.getElementById("data-table");
+      for (var i = 0; i < data.length; i++) {
+        var row = table.insertRow(i + 1);
+        var idCell = row.insertCell(0);
+        var nameCell = row.insertCell(1);
+        var emailCell = row.insertCell(2);
+        var phoneCell = row.insertCell(3);
+        var ageCell = row.insertCell(4);
+        var genderCell = row.insertCell(5);
+
+
+        idCell.textContent = data[i].dadi;
+        nameCell.textContent = data[i].demail;
+        emailCell.textContent = data[i].dnot;
+        phoneCell.textContent = data[i].dsaati;
+        ageCell.textContent = data[i].dphone;
+      }
+    }
+
+    // Sayfa yüklendiğinde veriyi al
+    window.onload = function () {
+      getData();
+    };
+  </script>
+</head>
+
+<body>
+  </nav>
+  <h1>RANDEVULARIN ATANDIĞI DİYETİSYENLER</h1>
+  <nav>
+    <ul>
+      <li onclick="window.location.href='dashboard.html';" style="cursor: pointer;" class="no-underline">Randevular
+        sayfasına dön</li>
+    </ul>
+  </nav>
+  <br>
+  <table id="data-table">
+    <tr>
+      <th>Danışman Adı</th>
+      <th>Danışman Mail</th>
+      <th>Danışman Not</th>
+      <th>Randevu Saati</th>
+      <th>Danışman Telefon</th>
+    </tr>
+    </tr>
+  </table>
+
+</body>
+
+</html>

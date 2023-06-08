@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>RANDEVULAR</title>
+  <link rel="stylesheet" href="css\dashboard.css">
+  <script>
+
+    // Veriyi almak için AJAX kullanma
+    function getData() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "veri_cekme.php", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          displayData(data);
+        }
+      };
+      xhr.send();
+    }
+
+    // Veriyi HTML içerisinde görüntüleme
+    function displayData(data) {
+  var table = document.getElementById("data-table");
+  var emailSelect = document.getElementById("email");
+
+  for (var i = 0; i < data.length; i++) {
+    var row = table.insertRow(i + 1);
+        var idCell = row.insertCell(0);
+        var nameCell = row.insertCell(1);
+        var emailCell = row.insertCell(2);
+        var phoneCell = row.insertCell(3);
+        var ageCell = row.insertCell(4);
+        var genderCell = row.insertCell(5);
+        var weightCell = row.insertCell(6);
+        var heightCell = row.insertCell(7);
+        var targetWeightCell = row.insertCell(8);
+        var activityCell = row.insertCell(9);
+        var healthCell = row.insertCell(10);
+        var mealCountCell = row.insertCell(11);
+        var notesCell = row.insertCell(12);
+    // ... other cells
+
+    idCell.textContent = data[i].id;
+        nameCell.textContent = data[i].ad;
+        emailCell.textContent = data[i].eposta;
+        phoneCell.textContent = data[i].telefon;
+        ageCell.textContent = data[i].yas;
+        genderCell.textContent = data[i].cinsiyet;
+        weightCell.textContent = data[i].kilo;
+        heightCell.textContent = data[i].boy;
+        targetWeightCell.textContent = data[i].hedef_kilo;
+        activityCell.textContent = data[i].aktivite;
+        healthCell.textContent = data[i].saglik_durumu;
+        mealCountCell.textContent = data[i].ogun_sayisi;
+        notesCell.textContent = data[i].notlar;
+    // ... populate other cells
+
+    // Add email as an option in the select element
+    var emailOption = document.createElement("option");
+    emailOption.value = data[i].eposta;
+    emailOption.textContent = data[i].eposta;
+    emailSelect.appendChild(emailOption);
+  }
+
+  var deleteForm = document.getElementById("delete-form");
+  var deleteButton = deleteForm.querySelector('input[type="submit"]');
+  deleteButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    var selectedEmail = emailSelect.value;
+    var hiddenInput = document.createElement("input");
+    hiddenInput.type = "hidden";
+    hiddenInput.name = "email";
+    hiddenInput.value = selectedEmail;
+    deleteForm.appendChild(hiddenInput);
+    deleteForm.submit();
+  });
+
+}
+    // Sayfa yüklendiğinde veriyi al
+    window.onload = function () {
+      getData();
+    };
+
+  </script>
+</head>
+
+<body>
+  <h1>TÜM RANDEVULAR</h1>
+  <nav>
+    <ul>
+      <li onclick="window.location.href='randevu_diyatisyenler.html';" style="cursor: pointer;" class="no-underline">Randevulara diyetisyen ata
+      </li>
+    </ul>
+    <ul>
+      <li onclick="window.location.href='randevu_sil.html';" style="cursor: pointer;" class="no-underline">Kullanıcıya Atanan Randevuyu Sil
+      </li>
+    </ul>
+    <ul>
+      <li onclick="window.location.href='diyetisyenlere_atanan_randevular.html';" style="cursor: pointer;" class="no-underline">Diyetisyene atanan randevular
+      </li>
+    </ul>
+    <ul>
+      <li onclick="window.location.href='login.html';" style="cursor: pointer;" class="no-underline">Giriş sayfasına dön
+      </li>
+    </ul>
+  </nav>
+  <br>
+  <table id="data-table">
+    <form id="delete-form" action="sil.php" method="POST">
+      <select id="email" name="email">
+        <option value="">Select Email</option>
+      </select>
+      <input type="submit" value="SİL" />
+    </form>
+</div>
+    <tr>
+      <th>ID</th>
+      <th>İsim</th>
+      <th>E-posta</th>
+      <th>Telefon</th>
+      <th>Yaş</th>
+      <th>Cinsiyet</th>
+      <th>Kilo</th>
+      <th>Boy</th>
+      <th>Hedef Kilo</th>
+      <th>Aktivite</th>
+      <th>Sağlık Durumu</th>
+      <th>Öğün Sayısı</th>
+      <th>Notlar</th>
+    </tr>
+  </table>
+</body>
+
+</html>

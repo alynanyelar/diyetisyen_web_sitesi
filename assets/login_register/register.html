@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <meta name="description" content="Login - Register Template" />
+    <meta name="author" content="Lorenzo Angelino aka MrLolok" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css\main.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="bodyback">
+    <div id="container-register">
+      <div id="title"><i class="material-icons lock">lock</i> Kayıt olmak</div>
+
+      <form action="kayit.php" method="POST">
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">email</i>
+          </div>
+          <input
+            id="email"
+            name="kyemail"
+            placeholder="Email"
+            type="email"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">face</i>
+          </div>
+          <input
+            id="username"
+            name="kyusername"
+            placeholder="Username"
+            type="text"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="input">
+          <div class="input-addon">
+            <i class="material-icons">key</i>
+          </div>
+          <input
+            id="password"
+            name="kypassword"
+            placeholder="Password"
+            type="password"
+            required
+            class="validate"
+            autocomplete="off"
+          />
+        </div>
+
+        <input type="submit" value="Kayıt Ol" />
+      </form>
+      <div class="register">
+        zaten bir hesabınız var mı?<br />
+        <a href="login.html"><button id="register-link">Giriş yapın</button></a>
+      </div>
+    </div>
+  </body>
+</html>
